@@ -1,0 +1,212 @@
+<html>
+    <head>
+        <title>
+            Excel file upload and processing : Django Example : ThePythonDjango.Com
+        </title>
+    </head>
+    <body style="margin-top: 30px;margin-left: 30px;">
+        <div>
+            <table border="1px">
+                <tr class="header">
+                    <th style="background-color: papayawhip ;">Sr_No</th>
+                    <th style="background-color: papayawhip ;">Status</th> 
+                    <th style="background-color: papayawhip ;">Idea_No</th> 
+                    <th style="background-color: papayawhip ;">Idea_for</th> 
+                    <th style="background-color: papayawhip ;">DML_days</th> 
+                    <th style="background-color: papayawhip ;">DML_recieve</th> 
+                    <th style="background-color: papayawhip ;">Model</th> 
+                    <th style="background-color: papayawhip ;">DML_no</th> 
+                    <th style="background-color: papayawhip ;">DML_description</th> 
+                    <th style="background-color: lightcoral ;">S_no</th> 
+                    <th style="background-color: lightcoral ;">Added_PartNo</th>
+                    <th style="background-color: lightcoral ;">Description</th> 
+                    <th style="background-color: lightcoral ;">C_S</th> 
+                    <th style="background-color: lightcoral ;">Rev</th> 
+                    <th style="background-color: lightcoral ;">Qty</th> 
+                    <th style="background-color: green ;">Deleted_Partno</th> 
+                    <th style="background-color: green ;">Description</th>
+                    <th style="background-color: green ;">C_S</th>
+                    <th style="background-color: green ;">Rev</th>
+                    <th style="background-color: green ;">Qty</th>
+                    <th style="background-color: papayawhip ;">DML_Remarks</th>  
+                    <th style="background-color: papayawhip ;">VC_no</th>
+                    <th style="background-color: papayawhip ;">Added_PartStatus</th>
+                    <th style="background-color: papayawhip ;">Deleted_PartStatus</th>
+                    <th style="background-color: papayawhip ;">AddedPart_BuyerName</th>
+                    <th style="background-color: papayawhip ;">DeletedPart_BuyerName</th>
+                    <th style="background-color: papayawhip ;">DeletedPart_Department</th>
+                    <th style="background-color: papayawhip ;">AddedPart_Vendor</th>
+                    <th style="background-color: papayawhip ;">DeletedPart_Vendor</th>
+                    <th style="background-color: papayawhip ;">Added_partSOB</th>
+                    <th style="background-color: papayawhip ;">AddedPart_str_loc</th>
+                    <th style="background-color: papayawhip ;">Deleted_partSOB</th>
+                    <th style="background-color: papayawhip ;">DeletedPart_str_loc</th>
+                    <th style="background-color: papayawhip ;">AddedPart_Map</th>
+                    <th style="background-color: papayawhip ;">DeletedPart_Map</th>
+                    <th style="background-color: papayawhip ;">AddedPart_Bulk</th>
+                    <th style="background-color: papayawhip ;">DeletedPart_Bulk</th>
+                    <th style="background-color: papayawhip ;">Difference</th>
+                    <th style="background-color: papayawhip ;">MailShareToTeam</th>
+                    <th style="background-color: papayawhip ;">PrimaryStock_Recieved</th>
+                    <th style="background-color: papayawhip ;">Trail_On</th>
+                    <th style="background-color: papayawhip ;">FinalStock_communication</th>
+                    <th style="background-color: papayawhip ;">Implemented_On</th>
+                </tr>
+                {% for x in DLn %}
+                <tr>
+                    <td style="background-color: papayawhip ;">
+                        {{x.sr_no}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.status}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.idea_no}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.idea_for}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.dml_days}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.dml_recieve}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.model}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.dml_no}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.dml_description}}
+                    </td>
+                    <td style="background-color: lightcoral ;">
+                        {{x.s_no}}
+                    </td>
+                    <td style="background-color: lightcoral ;">
+                        {{x.added_partno}}
+                    </td>
+                    <td style="background-color: lightcoral ;">
+                        {{x.description}}
+                    </td>
+                    <td style="background-color: lightcoral ;">
+                        {{x.c_s}}
+                    </td>
+                    <td style="background-color: lightcoral ;">
+                        {{x.rev}}
+                    </td>
+                    <td style="background-color: lightcoral ;">
+                        {{x.qty}}
+                    </td>
+                    <td style="background-color: green ;">
+                        {{x.deleted_partno}}
+                    </td>
+                    <td style="background-color: green ;">
+                        {{x.description_1}}
+                    </td>
+                    <td style="background-color: green ;">
+                        {{x.c_s_1}}
+                    </td>
+                    <td style="background-color: green ;">
+                        {{x.rev_1}}
+                    </td>
+                    <td style="background-color: green ;">
+                        {{x.qty_1}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.dml_remarks}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.vc_no}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.description_2}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.added_partstatus}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.deleted_partstatus}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.addedpart_buyername}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.deletedpart_buyername}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.deletedpart_department}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.addedpart_vendor}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.deletedpart_vendor}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.added_partsob}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.addedpart_str_loc}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.deleted_partsob}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.deletedpart_str_loc}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.addedpart_map}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.deletedpart_map}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.addedpart_bulk}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.deletedpart_bulk}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.difference}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.mailsharetoteam}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.primarystock_recieved_field}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.trail_on}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.finalstock_communication}}
+                    </td>
+                    <td style="background-color: papayawhip ;">
+                        {{x.implemented_on}}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <br>
+    
+    
+    <form method="post" enctype="multipart/form-data">         
+        {% csrf_token %}
+        <input type="file" id="myfile" name="myfile" title=".xlsx"s  >
+        <input id="btn" type="submit" value="ok">
+        </form>
+
+        <p></p>
+        
+
+        {% for row in excel_data %}
+            {% for cell in row %}
+                {{ cell }}&nbsp;&nbsp;
+            {% endfor %}
+            <br>
+        {% endfor %}
+    </body>
+</html>

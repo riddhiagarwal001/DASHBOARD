@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>
+            Excel file upload and processing : Django Example : ThePythonDjango.Com
+        </title>
+    </head>
+    <body style="margin-top: 30px;margin-left: 30px;">
+        <div>
+        <table border="1px">
+            <tr class="header">
+                <th style="background-color: papayawhip ;">ProcType</th>
+                <th style="background-color: papayawhip ;">SPT</th> 
+                <th style="background-color: papayawhip ;">Material</th>
+                <th style="background-color: papayawhip ;">Issue_SL</th>
+                <th style="background-color: papayawhip ;">EP_SL</th>
+                <th style="background-color: papayawhip ;">Mard_SL</th>
+                <th style="background-color: papayawhip ;">In_qual_insp</th>
+                <th style="background-color: papayawhip ;">Unrestricted</th>
+                <th style="background-color: papayawhip ;">Bun</th>
+
+            </tr>
+            {% for x in Sno %}
+            <tr>
+                <td style="background-color: papayawhip ;">
+                    {{x.ProcType}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.SPT}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Material}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Issue_SL}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.EP_SL}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Mard_SL}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.In_qual_insp}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Unrestricted}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Bun}}
+                </td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <br>
+
+        <form method="post" enctype="multipart/form-data">         
+            {% csrf_token %}
+           
+            <input type="file" id="myfile" name="myfile" title=".xlsx"s  >
+            <input id="btn" type="submit" value="submit">
+            </form>
+
+        <p></p>
+        
+
+        {% for row in excel_data %}
+            {% for cell in row %}
+                {{ cell }}&nbsp;&nbsp;
+            {% endfor %}
+            <br>
+        {% endfor %}
+    </body>
+</html>

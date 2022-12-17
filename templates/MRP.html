@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>
+            Excel file upload and processing : Django Example : ThePythonDjango.Com
+        </title>
+    </head>
+    <body style="margin-top: 30px;margin-left: 30px;">
+        <div>
+        <table border="1px">
+            <tr class="header">
+                <th style="background-color: papayawhip ;">MRPCn</th>
+                <th style="background-color: papayawhip ;">New_Description</th> 
+                <th style="background-color: papayawhip ;">Name</th>
+                <th style="background-color: papayawhip ;">Group_Lead</th>
+            </tr>
+            {% for x in Mrn %}
+            <tr>
+                <td style="background-color: papayawhip ;">
+                    {{x.MRPCn}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.New_Description}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Name}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Group_Lead}}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <br>
+
+    <form method="post" enctype="multipart/form-data">         
+        {% csrf_token %}
+        <input type="file" id="myfile" name="myfile" title=".xlsx"s  >
+        <input id="btn" type="submit" value="ok">
+        </form>
+
+        <p></p>
+        
+
+        {% for row in excel_data %}
+            {% for cell in row %}
+                {{ cell }}&nbsp;&nbsp;
+            {% endfor %}
+            <br>
+        {% endfor %}
+    </body>
+</html>

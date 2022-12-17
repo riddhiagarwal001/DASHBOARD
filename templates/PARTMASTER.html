@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <title>
+            Excel file upload and processing : Django Example : ThePythonDjango.Com
+        </title>
+    </head>
+    <body style="margin-top: 30px;margin-left: 30px;">
+        <div>
+        <table border="1px">
+            <tr class="header">
+                <th style="background-color: papayawhip ;">Part_Vendor</th>
+                <th style="background-color: papayawhip ;">Material</th> 
+                <th style="background-color: papayawhip ;">Material_description</th>
+                <th style="background-color: papayawhip ;">Vendor_Code</th>
+                <th style="background-color: papayawhip ;">Vendor_description</th>
+                <th style="background-color: papayawhip ;">Quota_Valid_from</th>
+                <th style="background-color: papayawhip ;">Quota_Valid_to</th>
+                <th style="background-color: papayawhip ;">Quota_percentage</th>
+                <th style="background-color: papayawhip ;">Quota_number</th>
+                <th style="background-color: papayawhip ;">Proctype</th>
+                <th style="background-color: papayawhip ;">Spl_Proc_Type</th>
+                <th style="background-color: papayawhip ;">Bulk_Ind</th>
+                <th style="background-color: papayawhip ;">MRP_Cntrl</th>
+                <th style="background-color: papayawhip ;">Buyer</th>
+                <th style="background-color: papayawhip ;">Lead_Buyer</th>
+                <th style="background-color: papayawhip ;">Department</th>
+                <th style="background-color: papayawhip ;">Bulk_Part</th>
+                <th style="background-color: papayawhip ;">Str_loc</th>
+                <th style="background-color: papayawhip ;">Vendor_location</th>
+                <th style="background-color: papayawhip ;">Vendor_state</th>
+            </tr>
+            {% for x in Pno %}
+            <tr>
+                <td style="background-color: papayawhip ;">
+                    {{x.Part_Vendor}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Material}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Material_description}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Vendor_Code}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Vendor_description}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Quota_Valid_from}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Quota_Valid_to}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Quota_percentage}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Quota_number}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Proctype}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Spl_Proc_Type}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Bulk_Ind}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.MRP_Cntrl}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Buyer}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Lead_Buyer}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Department}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Bulk_Part}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Str_loc}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Vendor_location}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Vendor_state}}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <br>
+    
+    <form method="post" enctype="multipart/form-data">         
+        {% csrf_token %}
+        <input type="file" id="myfile" name="myfile" title=".xlsx"s  >
+        <input id="btn" type="submit" value="ok">
+        </form>
+
+       
+
+        <p></p>
+        
+
+        {% for row in excel_data %}
+            {% for cell in row %}
+                {{ cell }}&nbsp;&nbsp;
+            {% endfor %}
+            <br>
+        {% endfor %}
+    </body>
+</html>

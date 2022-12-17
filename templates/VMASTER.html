@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>
+            Excel file upload and processing : Django Example : ThePythonDjango.Com
+        </title>
+    </head>
+    <body style="margin-top: 30px;margin-left: 30px;">
+        <div>
+        <table border="1px">
+            <tr class="header">
+                <th style="background-color: papayawhip ;"> Vendor</th>
+                <th style="background-color: papayawhip ;">Vendor_Desciption</th> 
+                <th style="background-color: papayawhip ;"> name_3</th>
+                <th style="background-color: papayawhip ;">name_4</th>
+                <th style="background-color: papayawhip ;">City</th>
+                <th style="background-color: papayawhip ;">Postal_Code</th>
+                <th style="background-color: papayawhip ;">State</th>
+                <th style="background-color: papayawhip ;"> Recovery</th>
+                <th style="background-color: papayawhip ;"> Email</th>
+
+            </tr>
+            {% for x in  Vno %}
+            <tr>
+                <td style="background-color: papayawhip ;">
+                    {{x.Vendor}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Vendor_Desciption}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.name_3}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.name_4}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.City}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Postal_Code}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.State}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Recovery}}
+                </td>
+                <td style="background-color: papayawhip ;">
+                    {{x.Email}}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <br>
+
+        <form method="post" enctype="multipart/form-data">         
+            {% csrf_token %}
+           
+            <input type="file" id="myfile" name="myfile" title=".xlsx"s  >
+            <input id="btn" type="submit" value="submit">
+            </form>
+
+        <p></p>
+        
+
+        {% for row in excel_data %}
+            {% for cell in row %}
+                {{ cell }}&nbsp;&nbsp;
+            {% endfor %}
+            <br>
+        {% endfor %}
+    </body>
+</html>

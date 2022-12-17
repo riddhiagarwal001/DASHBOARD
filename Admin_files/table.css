@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Raleway', sans-serif;
+
+}
+
+p,a{
+    font-family: 'Roboto', sans-serif;
+}
+
+img-responsive {
+    display: block;
+    max-width: 100;
+    height: auto;
+}
+
+cantainer {
+    max-width: 1330px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.clear {
+    clear: both;
+}
+
+
+
+    /*sidebar css*/
+    section#sidebar {
+    width: 20%;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.9),rgba(17, 3, 3, 0.9)), url(../static/images/images.jpg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: ghostwhite;
+    height: 100%;
+}
+
+.sidebar-brand {
+    padding: 50px 40px;
+}
+element.style {
+    padding: 10px;
+}
+li {
+    padding: 10px;
+    width: fit-content;
+    background-color: black;
+}
+
+ul {
+    padding: 100px;
+}
+   
+
+    
+   
